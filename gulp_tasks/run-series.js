@@ -22,4 +22,5 @@ BasicGulpTask.run('dev', [
 
 BasicGulpTask.run('build', [
   'css:post',
+  'html:post',
 ]);
