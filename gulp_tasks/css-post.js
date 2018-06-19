@@ -8,5 +8,5 @@ let obj = {
   fn,
 };
 
-const imageMinify = new StreamGulpTask(obj);
-imageMinify.create();
+const cssPost = new StreamGulpTask(obj);
+cssPost.create();
