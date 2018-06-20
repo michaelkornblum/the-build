@@ -1,7 +1,7 @@
 const StreamGulpTask = require('./classes/stream-gulp-task');
-let fn = require('./functions/vector-minify');
+const fn = require('./functions/vector-minify');
 
-let obj = {
+const obj = {
   name: 'vector:minify',
   src: './vectors/*',
   dest: './assets/vectors/',
