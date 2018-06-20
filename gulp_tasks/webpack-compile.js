@@ -1,7 +1,7 @@
 const StreamGulpTask = require('./classes/stream-gulp-task');
-let fn = require('./functions/webpack-compile');
+const fn = require('./functions/webpack-compile');
 
-let obj = {
+const obj = {
   name: 'webpack:compile',
   src: './scripts/main.js',
   dest: './assets/scripts/',
@@ -15,5 +15,4 @@ let obj = {
   fn,
 };
 
-const webpackCompile = new StreamGulpTask(obj);
-webpackCompile.all();
+new StreamGulpTask(obj);

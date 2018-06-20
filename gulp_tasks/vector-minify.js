@@ -15,5 +15,4 @@ let obj = {
   fn,
 };
 
-const vectorMinify = new StreamGulpTask(obj);
-vectorMinify.all();
+new StreamGulpTask(obj);

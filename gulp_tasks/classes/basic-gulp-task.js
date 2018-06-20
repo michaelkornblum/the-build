@@ -7,8 +7,17 @@ module.exports = class BasicGulpTask {
     for (let prop in obj) {
       this[prop] = obj[prop];
     }
-  }
 
+    this.create();
+
+    if (obj.hasOwnProperty('watchDir') && obj.hasOwnProperty('watchTask')) {
+      if(obj.watchTask.indexOf(`clean:${this.name}` !== -1)) {
+        this.clean();
+      }
+      this.watch();
+    }
+  }
+  
   create() {
     return task(this.name, (cb) => {
       this.fn();
@@ -29,12 +38,7 @@ module.exports = class BasicGulpTask {
       cb();
     });
   }
-  all() {
-    this.create();
-    this.clean();
-    this.watch();
-  }
-
+  
   static serverStart(src='./build') {
     return task('server:start', (cb) => {
       init({

@@ -8,5 +8,4 @@ let obj = {
   fn,
 };
 
-const cssPost = new StreamGulpTask(obj);
-cssPost.create();
+new StreamGulpTask(obj);

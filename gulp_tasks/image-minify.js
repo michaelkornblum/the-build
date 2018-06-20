@@ -15,5 +15,4 @@ let obj = {
   fn,
 };
 
-const imageMinify = new StreamGulpTask(obj);
-imageMinify.all();
+new StreamGulpTask(obj);

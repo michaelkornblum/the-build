@@ -15,5 +15,4 @@ let obj = {
   fn,
 };
 
-const imageResize = new StreamGulpTask(obj);
-imageResize.all();
+new StreamGulpTask(obj);

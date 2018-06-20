@@ -1,7 +1,7 @@
 const StreamGulpTask = require('./classes/stream-gulp-task');
-let fn = require('./functions/stylus-compile');
+const fn = require('./functions/stylus-compile');
 
-let obj = {
+const obj = {
   name: 'stylus:compile',
   src: './styles/main.styl',
   dest: './assets/styles',
@@ -15,5 +15,4 @@ let obj = {
   fn,
 };
 
-const stylusCompile = new StreamGulpTask(obj);
-stylusCompile.all();
+new StreamGulpTask(obj);

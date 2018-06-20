@@ -1,7 +1,7 @@
 const BasicGulpTask = require('./classes/basic-gulp-task');
-let fn = require('./functions/metalsmith-compile');
+const fn = require('./functions/metalsmith-compile');
 
-let obj = {
+const obj = {
   name: 'metalsmith:compile',
   watchDir: [
     './src/**/*',
@@ -14,6 +14,4 @@ let obj = {
   fn,
 }
 
-const metalsmithCompile = new BasicGulpTask(obj);
-metalsmithCompile.create();
-metalsmithCompile.watch();
+new BasicGulpTask(obj);
