@@ -1,8 +1,27 @@
+const { task, series } = require('gulp');
 require('./gulp_tasks');
 
-// This gulpfile looks kinda sparse, don't it?
-// Don't worry, it will still work.
-// To start a dev server, just type:
-//   npm run dev.
-// To compile the site, enter:
-//   npm run build.
+task('assets:prepare', series(
+  'clean:all',
+  'vector:minify',
+  'webpack:compile',
+  'image:minify',
+  'image:resize',
+  'stylus:compile',
+  'metalsmith:compile',
+));
+
+task('dev', series(
+  'server:start',
+  'watch:image:minify',
+  'watch:image:resize',
+  'watch:stylus:compile',
+  'watch:vector:minify',
+  'watch:webpack:compile',
+  'watch:metalsmith:compile',
+));
+
+task('build', series(
+  'css:post',
+  'html:post',
+));
