@@ -4,7 +4,7 @@ const fn = require('./functions/stylus-compile');
 const obj = {
   name: 'stylus:compile',
   src: './styles/main.styl',
-  dest: './assets/styles',
+  dest: './assets/styles/',
   watchDir: './styles/**/*',
   watchTask: [
     'clean:stylus:compile',

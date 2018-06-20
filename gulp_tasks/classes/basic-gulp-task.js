@@ -34,7 +34,7 @@ module.exports = class BasicGulpTask {
 
   clean() {
     return task(`clean:${this.name}`, (cb) => {
-      del(this.dest);
+      del(`${this.dest}/**/*`);
       cb();
     });
   }
@@ -57,14 +57,10 @@ module.exports = class BasicGulpTask {
     });
   }
 
-  static cleanAll() {
+  static cleanAll(dirs=['./assets/**/*', './build/**/*']) {
     return task('clean:all', (cb) => {
-      del(['./assets/**/*', './build/**/*']);
+      del(...dirs);
       cb();
     });
-  }
-
-  static run(name, tasks) {
-    return task(name, series(...tasks))
   }
 };

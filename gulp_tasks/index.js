@@ -8,7 +8,6 @@ require('./clean-all');
 require('./metalsmith-compile');
 require('./css-post');
 require('./html-post');
-require('./sequential-tasks');
 
 
 

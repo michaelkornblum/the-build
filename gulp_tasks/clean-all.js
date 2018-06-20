@@ -1,3 +1,3 @@
 const BasicGulpTask = require('./classes/basic-gulp-task');
 
-BasicGulpTask.cleanAll();
+BasicGulpTask.cleanAll(['./assets/**/*', './build/**/*']);

@@ -1,6 +1,8 @@
 body {
-	color: #008000;
-	font-size: 2rem;
+	color: #800080;
+	font-size: 3rem;
+	text-decoration: underline;
+	background-color: #000;
 }
 
 .killme {
