@@ -1,7 +1,7 @@
 const StreamGulpTask = require('./classes/stream-gulp-task');
-let fn = require('./functions/image-resize');
+const fn = require('./functions/image-resize');
 
-let obj = {
+const obj = {
   name: 'image:resize',
   src: './images/resize/*',
   dest: './assets/images/resize/',

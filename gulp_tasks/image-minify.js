@@ -1,7 +1,7 @@
 const StreamGulpTask = require('./classes/stream-gulp-task');
-let fn = require('./functions/image-minify');
+const fn = require('./functions/image-minify');
 
-let obj = {
+const obj = {
   name: 'image:minify',
   src: './images/minify/*',
   dest: './assets/images/minify/',

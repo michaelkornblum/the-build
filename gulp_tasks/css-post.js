@@ -1,7 +1,7 @@
 const StreamGulpTask = require('./classes/stream-gulp-task');
-let fn = require('./functions/css-post');
+const fn = require('./functions/css-post');
 
-let obj = {
+const obj = {
   name: 'css:post',
   src: './build/assets/styles/*.css',
   dest: './build/assets/styles/',
