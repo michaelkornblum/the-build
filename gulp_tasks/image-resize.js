@@ -1,5 +1,10 @@
 const StreamGulpTask = require('./classes/stream-gulp-task');
 const fn = require('./functions/image-resize');
+const { riOpts } = require('./functions/helpers/gulp-helpers');
+
+const types = ['*.jpg', '*.jpeg', '*.png', '*.gif', '*.svg'];
+const sizes = [380, 420, 768, 992, 1200];
+const responsiveImages = riOpts(types, sizes);
 
 const obj = {
   name: 'image:resize',
@@ -13,6 +18,12 @@ const obj = {
     'server:reload',
   ],
   fn,
+  opts: {
+    responsiveImages,
+    smushit: {
+      verbose: true,
+    },
+  },
 };
 
 new StreamGulpTask(obj);

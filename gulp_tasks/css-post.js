@@ -6,6 +6,11 @@ const obj = {
   src: './build/assets/styles/*.css',
   dest: './build/assets/styles/',
   fn,
+  opts: {
+    uncss: {
+      html: ['./build/**/*index.html'],
+    },
+  },
 };
 
 new StreamGulpTask(obj);

@@ -13,6 +13,11 @@ const obj = {
     'server:reload',
   ],
   fn,
+  opts: {
+    smushit: {
+      verbose: true,
+    },
+  },
 };
 
 new StreamGulpTask(obj);

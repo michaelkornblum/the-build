@@ -3,10 +3,16 @@ const BasicGulpTask = require('./basic-gulp-task');
 
 module.exports = class StreamGulpTask extends BasicGulpTask {
   create() {
-    return task(this.name, () =>
-      src(this.src)
-      .pipe(this.fn())
-      .pipe(dest(this.dest))
-    )
+    if (this.opts) {
+      return task(this.name, () =>
+        src(this.src)
+          .pipe(this.fn(this.opts))
+          .pipe(dest(this.dest)));
+    } else {
+      return task(this.name, () =>
+        src(this.src)
+        .pipe(this.fn())
+        .pipe(dest(this.dest)));
+    }
   }
 }

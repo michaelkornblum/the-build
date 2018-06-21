@@ -20,7 +20,7 @@ module.exports = class BasicGulpTask {
   
   create() {
     return task(this.name, (cb) => {
-      this.fn();
+      this.opts ? this.fn(this.opts) : this.fn();
       cb();
     });
   }

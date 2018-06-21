@@ -5,12 +5,10 @@ const {
   smushit 
 } = require('gulp-load-plugins')();
 
-module.exports = () =>
+module.exports = opts =>
   combiner(
     plumber(),
     ifEnv('production',
-      smushit({
-        verbose: true
-      })
+      smushit(opts.smushit)
     )
   );
