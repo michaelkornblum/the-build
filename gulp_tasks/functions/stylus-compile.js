@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer');
 const { plumber, stylus } = require('gulp-load-plugins')();
 const combiner = require('stream-combiner');
 
-module.exports = () =>
+module.exports = opts =>
   combiner(
     plumber(),
     stylus({
@@ -17,9 +17,9 @@ module.exports = () =>
         postStylus([
           rucksack,
           lost,
-          autoprefixer({
-            browsers: 'last 2 versions',
-          }),
+          autoprefixer(
+            opts.autoprefixer
+          ),
         ]),
       ],
     }),

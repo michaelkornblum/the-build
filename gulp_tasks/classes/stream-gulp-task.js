@@ -8,11 +8,10 @@ module.exports = class StreamGulpTask extends BasicGulpTask {
         src(this.src)
           .pipe(this.fn(this.opts))
           .pipe(dest(this.dest)));
-    } else {
-      return task(this.name, () =>
-        src(this.src)
-        .pipe(this.fn())
-        .pipe(dest(this.dest)));
-    }
+    } 
+    return task(this.name, () =>
+      src(this.src)
+      .pipe(this.fn())
+      .pipe(dest(this.dest)));
   }
 }

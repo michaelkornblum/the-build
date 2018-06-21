@@ -13,6 +13,11 @@ const obj = {
     'server:reload',
   ],
   fn,
+  opts: {
+    autoprefixer: {
+      browsers: 'last 2 versions',
+    }
+  }
 };
 
 new StreamGulpTask(obj);
