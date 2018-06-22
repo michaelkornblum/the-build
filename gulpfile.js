@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { task, series } = require('gulp');
 require('./gulp_tasks');
 

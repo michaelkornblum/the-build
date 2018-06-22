@@ -59,7 +59,7 @@ module.exports = class BasicGulpTask {
 
   static cleanAll(dirs=['./assets/**/*', './build/**/*']) {
     return task('clean:all', (cb) => {
-      del(...dirs);
+      del(dirs);
       cb();
     });
   }
