@@ -2,12 +2,12 @@ const metalsmith = require('metalsmith');
 const {
   assets,
   beautify,
-  codeHighlight,
+  //codeHighlight,
   collections,
-  domTransform,
+  debug,
   excerpts,
   feed,
-  inPlace,
+  responsiveImages,
   layouts,
   markdown,
   pagination,
@@ -29,6 +29,7 @@ module.exports = () =>
   .destination('./build')
   .clean(true)
   .use(markdown())
+  .use(responsiveImages())
   .use(collections({
     posts: {
       pattern: 'posts/*.html',
@@ -80,12 +81,14 @@ module.exports = () =>
   }))
   .use(assets({
     source: './assets',
-    destination: './assets',
+    //destination: './assets',
   }))
   .use(feed({
     collection: 'posts',
   }))
   .use(beautify())
+  .use(debug())
   .build((err) => {
     if (err) throw err;
   });
+  

@@ -3,7 +3,7 @@ const fn = require('./functions/image-resize');
 const { riOpts } = require('./functions/helpers/gulp-helpers');
 
 const types = ['*.jpg', '*.jpeg', '*.png', '*.gif', '*.svg'];
-const sizes = [380, 420, 768, 992, 1200];
+const sizes = [380, 420, 768, 992, 1198];
 const responsiveImages = riOpts(types, sizes);
 
 const obj = {
